@@ -64,30 +64,14 @@ body {
     text-align: center;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     position: relative;
+    padding: 2.5rem 1rem;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.slide-content::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
-    max-height: 80vh;
     overflow-y: auto;
-}
-
-.slide-content:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,255,255,0.2);
-}
-
-.slide-content::-webkit-scrollbar {
-    width: 6px;
-}
-.slide-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 158, 100, 0.3); /* Uses a faded version of your primary color */
-    border-radius: 10px;
+    overflow-x: hidden;
+    max-height: 80vh;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--glass-border) transparent;
 }
 
 h1 {
@@ -290,7 +274,6 @@ p {
     gap: 2rem; 
     justify-content: center; 
     margin-top: 2rem; 
-    flex-wrap: wrap;
 }
 
 .btn-link {
@@ -450,7 +433,7 @@ p {
 .no-transition { transition: none !important; }
 
 @media (max-width: 768px) {
-    .slide-content { padding: 1.5rem 1.2rem; width: 95%; }
+    .slide-content { padding: 1.5rem 1.2rem; width: 95%; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0;}
 
     h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
     .project-header h1, .title-row h1 { font-size: 1.5rem; }
@@ -475,7 +458,7 @@ p {
     .badge { margin-bottom: 0.5rem; font-size: 0.75rem; }
 
     .btn-link { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
-    .links-container { gap: 1rem; margin-top: 1.5rem; }
+    .links-container { gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;}
 
     .arrow-btn { width: 40px; height: 40px; }
     .minimap-container { bottom: 20px; right: 20px; gap: 8px; }
